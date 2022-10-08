@@ -1,3 +1,5 @@
+import 'package:flut_final/LeaderBoard.dart';
+import 'package:flut_final/ProfilePage1.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Trivial Pursuit Home Page'),
     );
   }
 }
@@ -53,19 +55,13 @@ class _MyHomePageState extends State<MyHomePage> {
   static const TextStyle optionStyle = TextStyle(
       fontSize: 30, fontWeight: FontWeight.bold);
   //Check widget IndexedStack
-  static const List<Widget> _widgetOptions = <Widget>[
+  static List<Widget> _widgetOptions = <Widget>[
     Text(
       'Index 0: Home',
       style: optionStyle,
     ),
-    Text(
-      'Page de classement',
-      style: optionStyle,
-    ),
-    Text(
-      'Page de profile',
-      style: optionStyle,
-    ),
+    LeaderBoard(),
+    ProfilePage1(),
   ];
 
   void _onItemTapped(int index) {
